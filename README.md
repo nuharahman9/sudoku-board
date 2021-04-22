@@ -19,16 +19,25 @@
 
 ## Project Description:
  > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you? This project is interesting to us because we all like the game Sudoku and wanted to gain a deeper understanding into how all the parts of the game would go together in code (C++).
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
+ > **Why is it important or interesting to you?**
+ > 
+ > This project is interesting to us because we all share an enthusiasm for the game Sudoku and wanted to gain a deeper understanding into how all the parts of the game would go together in code (C++).
+ > **What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ >   * [toolname](link) - Short description**
+ >   
  >   We plan to use C++, Github, and Git. We will work on this project through the Terminal using UCR's Hammer server.
- > * What will be the input/output of your project?
- > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
+ > * **What will be the input/output of your project?**
+ > 
+ > At its most basic level, the program will start by outputting a menu, prompting the user to begin a game. It will take numbers as an input, and generate an  > > > updated soduku board as an output, in addition to the numbers entered. With each move, the menu should be continuously output, taking letters as input, allowing > the user to regenerate a board view, or to quit the game. If we have the time, we would also like to add features such as allowing the user to enter the level of > difficulty they would like for their soduku game (via letter options as input), an option allowing users to view whether their entry was correct, as well as timed games. 
+ > * **What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:**
  >   * Why you picked this pattern and what feature you will implement with it
  >   * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
  >   * Why the chosen design pattern will lead to a good solution to that problem
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+ > 
+ > Firstly we would like to use Abstract Factory, as the program should be extremely user friendly and users should not have to interact with the concrete classes (which would contain the data stored from the game, and execute the algorithms accordingly), and they only need to use the interface provided to them in the abstract class, which would be the display of the soduku board itself and the menu. This leads into the fact that the user should be able to easily manipulate instances through abstract interfaces (ie, entering numbers, in addition to the other features described above). Since one big idea behind Abstract Factory is that a family of related product objects are designed to be used together, we assumed that this would be suited for the game Soduku, as other related product objects such as (for example) the number entries or the solutions to the game are all going to be used cohesively during runtime. 
+ > We would also like to use Strategy, as there are some algorithms such as where number will be displayed on the board, how the user will select the square they  
+ > want to write an entry into, etc .  that should be hidden from the users. Since these algorithms will be closely related in terms of implementation, it would be convenient if they were encapsulated. Furthermore, 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
