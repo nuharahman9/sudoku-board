@@ -21,7 +21,7 @@
  > Your project description should summarize the project you are proposing. Be sure to include
  > **Why is it important or interesting to you?**
  > 
- > This project is interesting to us because we all share an enthusiasm for the game Sudoku and wanted to gain a deeper understanding into how all the parts of the game would go together in code (C++).
+ > This project is interesting to us because we all share an enthusiasm for the game Sudoku and wanted to gain a deeper understanding into how all the parts of the game would go together in code (C++). And because it will be a fun opportunity to translate our knowledge of programming into simple game development. This will be a great and challenging task for our goal of expanding our familiarity with game development.
  > **What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description**
  >   
