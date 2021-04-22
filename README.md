@@ -17,7 +17,7 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
 
-## Project Description
+## Project Description: Sudoku
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you? This project is interesting to us because we all like the game Sudoku and wanted to gain a deeper understanding into how all the parts of the game would go together in code (C++).
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
