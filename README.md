@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# Sudoku
  > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
@@ -17,7 +17,7 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
 
-## Project Description: Sudoku
+## Project Description:
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you? This project is interesting to us because we all like the game Sudoku and wanted to gain a deeper understanding into how all the parts of the game would go together in code (C++).
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
