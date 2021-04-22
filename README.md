@@ -19,9 +19,10 @@
 
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
+ > * Why is it important or interesting to you? This project is interesting to us because we all like the game Sudoku and wanted to gain a deeper understanding into how all the parts of the game would go together in code (C++).
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
+ >   We plan to use C++, Github, and Git. We will work on this project through the Terminal using UCR's Hammer server.
  > * What will be the input/output of your project?
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
  >   * Why you picked this pattern and what feature you will implement with it
