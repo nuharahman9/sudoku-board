@@ -6,43 +6,20 @@
 #include <unordered_set>
 using namespace std;
 
-SudokuCell::SudokuCell() {
-	filled = false;
-	attemptedCell = new unordered_set();
+SudokuCell::SudokuCell() {}
+
+bool SudokuCell::isFilled(int row, int col) {
+      for (int row = 0; row < 9; row++)
+      	for (int col = 0; col < 9; col++)
+         if (grid[row][col] == nullptr)
+            return false;
+   return false;
 }
 
-virtual bool SudokuCell::isFilled() {
-	return filled;
-}
-
-int SudokuCell::getVal() {
-	return value;
-}
-
-void SudokuCell::setVal(const int userNum) {
-	filled = true;
-	value = userNum;
-	attemptedCell.add(userNum);
-}
-
-virtual void SudokuCell::clear() {
-	value = 0;
-	filled = false;
-}
-
-virtual void SudokuCell::reset() {
-	clear();
-	attemptedCell.clear();
-}
-
-bool SudokuCell::isTried(const int userNum) {
-	return attemptedCell.contains(userNum);
-}
-
-void SudokuCell::tryNumber(const int userNum) {
-	attemptedCell.add(userNum);
-}
-
-int SudokuCell::numTried() {
-	return attemptedCell.size();
+void SudokuCell::reset() {
+	for (int row = 0; row < 9; row++) {
+        	for (int col = 0; col < 9; col++) {
+			grid[row][col] = [nullptr][nullptr];
+		}
+	}
 }
