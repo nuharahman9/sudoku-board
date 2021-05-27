@@ -45,10 +45,10 @@ public:
         int x = 0;
         int y = 0;
         srand(0); //note: using same int for now for the sake of testing.
-        SodukuCell*[9][9] board; // note: might have to allocate memory for array first.
+        SudokuCell*[9][9] board; // note: might have to allocate memory for array first.
         for (unsigned int i = 0; i < 9; i++) {
             for (unsigned int j = 0; j < 9; j++) {
-                board[i][j] = new SodukuCell(grid[i][j], i, j);
+                board[i][j] = new SudokuCell(grid[i][j], i, j);
             }
         }
         for (unsigned i = 0; i < 57; i++) {
@@ -70,10 +70,10 @@ public:
         int x = 0;
         int y = 0;
         srand(0); //note: using same int for now for the sake of testing.
-        SodukuCell*[9][9] board; // note: might have to allocate memory for array first.
+        SudokuCell*[9][9] board; // note: might have to allocate memory for array first.
         for (unsigned int i = 0; i < 9; i++) {
             for (unsigned int j = 0; j < 9; j++) {
-                board[i][j] = new SodukuCell(grid[i][j], i, j);
+                board[i][j] = new SudokuCell(grid[i][j], i, j);
             }
         }
         for (unsigned i = 0; i < 29; i++) {
