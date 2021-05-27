@@ -18,6 +18,12 @@ class Index : public SudokuCell{
 			return column;
 		}
 		void setCell(int input){
-			cellValue = input;	
+			cellValue = input;
+			if(input ==0){
+				setFilled(false);
+			}
+			else{
+				setFilled(true);
+			}	
 		}
 };
