@@ -4,6 +4,7 @@
 #include "GameStrategy.hpp"
 #include "SudokuCell.hpp"
 
+using namespace std;
 
 class SudokuBoard {
 public:
