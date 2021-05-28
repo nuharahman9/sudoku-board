@@ -8,7 +8,24 @@ class SudokuBoard {
 public:
     SudokuBoard();
     int getScore() {
-	return score;
+	//idea : compare game and solution, if same score++
+	   
+	    //initialize solution
+	    this->getSolution();
+	    
+	    //compare game and solution, if same score++
+	    for(int i=0; i < 9; ++i){
+                for(int j =0; j < 9; ++j){
+                      if(game[i][j] == solution[i][j]){
+			      	score++;
+		      }
+                }
+                	 if(game[i][j] == solution[i][j]){
+			      	score++;
+		      }
+        	}
+	}  
+	    return score;
     }
 
     void printBoard() {
