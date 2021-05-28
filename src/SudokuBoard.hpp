@@ -17,7 +17,14 @@ public:
 		exit(0);
 	}
     void createGame(); 
-    void getSolution(); 
+    void getSolution(){
+	for(int i=0; i < 9; ++i){
+		for(int j =0; j < 9; ++j){
+			cout << solution[i][j] << ' ';
+		}
+		cout << endl;
+	}
+} 
 
 protected:
     int[9][9] solution;
