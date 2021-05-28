@@ -29,26 +29,34 @@ public:
 	cin >> userEntry;
 	if (isFilled(int row, int col) == true) {
 		cout << "No entry possible in this position.";
+  		 }
+	}
+    void exitGame(){
+	//make entry would call exit game if 'entry' is ever q
+	//exit game then ends program
+		cout << "Goodbye!" << endl;
+		exit(0);
+	}
+    void createGame(){
+	string input;
+	cout << "Hello..." << endl;
+	cout << "Hard or easy game? (Please type ""hard"" or ""easy"")" <<endl;
+	cin >> input;
+	
+	if(input != "hard" || input != "easy"){
+		while(input != "hard" || input != "easy"){
+			cout << "Invalid input. Please try again." << endl;
+			cin >> input;
 		}
 	}
-     void exitGame(){
-        //make entry would call exit game if 'entry' is ever q 
-        //exit game then ends program;
-              cout << "Goodbye!" << endl;
-                exit(0);
-        } 
-    void createGame() {
-	string input;
-        cout << "Hello..." << endl;
-        cout << "Hard or easy game? (Please type ""hard"" or ""easy""" <<endl;
-        cin >> input;
 
-        if(input == "hard"){
-                game = new EasyGame.generateGame();
-        }
-        else if(input == "easy"){
-                game = new HardGame.generateGame();
-        } 
+	if(input == "hard"){
+		game = new EasyGame.generateGame();	
+	}
+	else if(input == "easy"){
+		game = new HardGame.generateGame();
+	}
+    }
     void getSolution() {
    	 solution = game.generateSolution();
         for(int i=0; i < 9; ++i){
