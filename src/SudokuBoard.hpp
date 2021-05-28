@@ -11,7 +11,11 @@ public:
     int getScore();
     void printBoard();
     void makeEntry();
-    void exitGame(); 
+    void exitGame(){
+	//make entry would call exit game if 'entry' is ever q
+	//exit game then ends program
+		exit(0);
+	}
     void createGame(); 
     void getSolution(); 
 
@@ -19,7 +23,7 @@ protected:
     int[9][9] solution;
     SudokuCell*[9][9] game;
     int score;
-
+    
 
 
 };
