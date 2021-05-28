@@ -21,16 +21,23 @@ public:
     void createGame(){
 	string input;
 	cout << "Hello..." << endl;
-	cout << "Hard or easy game? (Please type ""hard"" or ""easy""" <<endl;
+	cout << "Hard or easy game? (Please type ""hard"" or ""easy"")" <<endl;
 	cin >> input;
 	
+	if(input != "hard" || input != "easy"){
+		while(input != "hard" || input != "easy"){
+			cout << "Invalid input. Please try again." << endl;
+			cin >> input;
+		}
+	}
+
 	if(input == "hard"){
 		game = new EasyGame.generateGame();	
 	}
 	else if(input == "easy"){
 		game = new HardGame.generateGame();
 	}
-	
+
     void getSolution(){
 	solution = game.generateSolution();
 	for(int i=0; i < 9; ++i){
