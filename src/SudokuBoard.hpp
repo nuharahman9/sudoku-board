@@ -29,18 +29,25 @@ public:
     }
 
     void printBoard() {
-  	for(int i = 0; i < 9; i++) {
-    		for(int j = 0; j < 9; j++) {
-      			if(game == nullptr)
-				cout << ".";
-			else
-				cout << game[i][j];
-      				cout << "|";
-			}
-    				cout << endl;
+	if (game == nullptr) {return 0; }
+       for (int i = 0; i < 9; i++) {
+		cout << "|";
+	for (unsigned j = 0; j < 9; j++) {
+		if (game[i][j]->getCell() != 0) {
+			cout << game[i][j]->getCell() << "|";
+		} else {
+			cout << " "  << "|";
 		}
 	}
-
+	cout << endl;
+	if (i == 2 || i == 5 || i == 8) {
+		cout << "|=====|=====|=====|" << endl;
+	}
+	else{
+		cout << "|-----|-----|-----|" << endl;
+	}
+     }
+  }
     void makeEntry() {
 	cout << "Make an entry." << endl;
 	cin >> userEntry;
