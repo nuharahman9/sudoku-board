@@ -8,7 +8,7 @@ using namespace std;
 
 class SudokuBoard {
 public:
-    SudokuBoard() { };
+    SudokuBoard() { }
     int getScore() {
 	//idea : compare game and solution, if same score++
 	   
