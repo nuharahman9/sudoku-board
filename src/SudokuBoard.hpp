@@ -4,6 +4,8 @@
 #include "GameStrategy.hpp"
 #include "SudokuCell.hpp"
 
+using namespace std; 
+
 class SudokuBoard {
 public:
     SudokuBoard();
@@ -11,8 +13,6 @@ public:
 	//idea : compare game and solution, if same score++
 	   
 	    //initialize solution
-	    this->getSolution();
-	    
 	    //compare game and solution, if same score++
 	    for(int i=0; i < 9; ++i){
                 for(int j =0; j < 9; ++j){
@@ -30,13 +30,18 @@ public:
 
     void printBoard() {
 	if (game == nullptr) {return 0; }
-       for (int i = 0; i < 9; i++) {
-		cout << "|";
-	for (unsigned j = 0; j < 9; j++) {
+	cout << " |"; 
+	for (unsigned int k = 0; k < 9; k++) { 	
+	   cout << k++ << "|";  //prints row numbers 
+	}
+	cout << endl << "|"; 
+       for (unsigned int i = 0; i < 9; i++) {
+		cout << i++ << "|";
+	for (unsigned int j = 0; j < 9; j++) {
 		if (game[i][j]->getCell() != 0) {
 			cout << game[i][j]->getCell() << "|";
 		} else {
-			cout << " "  << "|";
+			cout << " " << "|";
 		}
 	}
 	cout << endl;
@@ -47,6 +52,7 @@ public:
 		cout << "|-----|-----|-----|" << endl;
 	}
      }
+  		
   }
     void makeEntry() {
 	cout << "Make an entry." << endl;
@@ -75,21 +81,40 @@ public:
 	}
 
 	if(input == "hard"){
-		game = new EasyGame.generateGame();	
+		GameStrategy* hard = new HardGame(); 
+		game = hard->generateGame();
+		solution = hard->generateSolution();
+		//delete hard;  	
 	}
 	else if(input == "easy"){
-		game = new HardGame.generateGame();
+		GameStrategy* easy = new EasyGame(); 
+		game = easy->generateGame(); 
+		solution = easy->generateSolution(); 
+		//delete easy; 
 	}
     }
     void getSolution() {
-   	 solution = game.generateSolution();
-        for(int i=0; i < 9; ++i){
-                for(int j =0; j < 9; ++j){
-                        cout << solution[i][j] << ' ';
+	int row = -1; 
+	int col = -1; 
+	cout << "Enter the digit of the row's solution you would like (1-9): " << endl;
+	while (row < 1 || row > 9 ) { 
+    		cin >> row; 
+		if (row < 1 || row > 9) { 
+			cout << "Invalid input! Please try again." << endl; 
+		}		
+	}
+	cout << "Enter the digit of the column's solution you would like (1-9): " << endl;
+        while (col < 1 || col > 9 ) {
+                cin >> col;
+                if (col < 1 || col > 9) {
+                        cout << "Invalid input! Please try again." << endl;
                 }
-                cout << endl;
-        	}
-	}  
+        }
+
+	int soln = solution[row-1][col-1]; 
+	cout << "Solution (row " << row << ", column " << col << "): " << soln << endl; 
+	
+   }  	
 
 protected:
     int[9][9] solution;
