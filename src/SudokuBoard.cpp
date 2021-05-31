@@ -1,8 +1,16 @@
 #include "SudokuBoard.hpp"
 
-SudokuBoard::SudokuBoard(){
-	//...
+SudokuBoard* SudokuBoard::instance = 0;
+
+SudokuBoard* SudokuBoard::getInstance() {
+    if (instance == 0) {
+        instance = new SudokuBoard();
+    }
+
+    return instance;
 }
+
+SudokuBoard::SudokuBoard(){}
 
 int SudokuBoard::getScore(){
 	for(int i=0; i < 9; i++){
