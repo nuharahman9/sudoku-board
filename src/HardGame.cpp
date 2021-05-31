@@ -1,7 +1,8 @@
-#include "GameStrategy.hpp"
+#include "EasyHard.hpp"
 
 HardGame::HardGame() {}
-HardGame::int** generateGame() {
+
+int** HardGame::generateGame() {
             int x = 0;
             int y = 0;
             srand(0);
@@ -21,7 +22,7 @@ HardGame::int** generateGame() {
             return board;
 }
 
-HardGame::int** generateSolution() {
+int** HardGame::generateSolution() {
    for (unsigned i = 0; i < 9; i++) { 
         for (unsigned k = 0; k < 9; k++) {
             board[i][k] = grid[i][k];
