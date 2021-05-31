@@ -1,4 +1,4 @@
-#include "EasyGame.hpp"
+#include "EasyHard.hpp"
 
 EasyGame::EasyGame() {}
 
