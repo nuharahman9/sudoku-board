@@ -123,29 +123,21 @@ void SudokuBoard::exitGame(){
 }
 
 void SudokuBoard::getSolution(){
-	for (unsigned int k = 0; k < 9; k++) {
-        	cout << k++ << "|";  //prints row numbers
-	}
-   		 cout << endl << "|";
-   	
-	 for (unsigned int i = 0; i < 9; i++) {
-        	cout << i++ << "|";
-         for (unsigned int j = 0; j < 9; j++) {
-        	if (userBoard[i][j] != 0) {
-                	cout << userBoard[i][j] << "|";
-        } 
-		else {
-             		cout << " " << "|";
-        }
-    }
-    	cout << endl;
-   		if (i == 2 || i == 5 || i == 8) {
-        cout << "|=====|=====|=====|" << endl;
-   }
-   else{
-        cout << "|-----|-----|-----|" << endl;
-   }
- }
+	for(int i=0; i < 9; i++){
+		for(int j=0; j < 9; j++){
+			if(j ==3 || j == 6){
+				cout << " | ";
+			}
+			cout << gameBoard[i][j] << " ";
+		}
+		if(i == 2 || i == 5){
+			cout << endl;
 		
+			for(int k =0; k < 9; k++){
+			cout << "---";
+			}
+		}
+		cout << endl;
+	}	
 		
 }

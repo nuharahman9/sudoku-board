@@ -6,5 +6,6 @@ int main() {
         test->printBoard();
         test->makeEntry();
         test->printBoard();
-        test->getSolution();
+       
+//	 test->getSolution();
 }	
