@@ -58,21 +58,30 @@ void SudokuBoard::printBoard(){
 }
 
 void SudokuBoard::makeEntry(){
-
-	int input;
-
-	cout << "Which row?" << endl;
-	cin >> input;
-	row = input;
-	
-	cout << "Which col?" << endl;
-	cin >> input;
-	col = input;
-	
-	cout << "What number?" << endl;
-	cin >> input;
-	cellValue = input;
-	
+	int input = 0;
+        cout << "Which row?" << endl;
+        cin >> input;  
+	while (input < 1 || input > 9) { 
+	   cout << "Invalid input! Please try again." << endl; 
+   	   cin >> input; 
+	}
+        this->row = input - 1; 
+	input = 0; 
+  	cout << "Which column?" << endl;
+        cin >> input;
+        while (input < 1 || input > 9) {
+           cout << "Invalid input! Please try again." << endl;
+           cin >> input; 
+        }
+	this->col = input - 1; 
+	input = 0;
+        cout << "What number for your entry?" << endl;
+        cin >> input;
+        while (input < 1 || input > 9) {
+           cout << "Invalid input! Please try again." << endl;
+           cin >> input;
+        }
+	this->cellValue = input - 1;	
 	this->getEntry(row, col, cellValue);
 }
 
