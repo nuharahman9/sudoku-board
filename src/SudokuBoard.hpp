@@ -1,7 +1,9 @@
 #ifndef __SUDOKUBOARD_HPP__
 #define __SUDOKUBOARD_HPP__
 #include <iostream>
-#include "GameStrategy.hpp"
+//#include "GameStrategy.hpp"
+#include "EasyHard.hpp"
+
 using namespace std; 
 
 class SudokuBoard {
