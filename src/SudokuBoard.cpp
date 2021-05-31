@@ -59,7 +59,7 @@ void SudokuBoard::makeEntry(){
 	   cout << "Invalid input! Please try again." << endl; 
    	   cin >> input; 
 	}
-        this->row = input - 1; 
+        this->row = input-1; 
 	input = 0; 
   	cout << "Which column?" << endl;
         cin >> input;
@@ -75,7 +75,7 @@ void SudokuBoard::makeEntry(){
            cout << "Invalid input! Please try again." << endl;
            cin >> input;
         }
-	this->cellValue = input - 1;	
+	this->cellValue = input;	
 	this->getEntry(row, col, cellValue);
 }
 
