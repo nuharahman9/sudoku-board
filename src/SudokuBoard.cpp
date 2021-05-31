@@ -1,4 +1,8 @@
 #include "SudokuBoard.hpp"
+#include "GameStrategy.hpp"
+#include <iostream> 
+#include <string> 
+using namespace std; 
 
 SudokuBoard* SudokuBoard::instance = 0;
 
@@ -24,21 +28,29 @@ int SudokuBoard::getScore(){
 }
 
 void SudokuBoard::printBoard(){
-	for(int r=0; i < 9; i++){
-		for(int c =0; j< 9; j++){
-			if(c == 3 || c == 6)
-   			cout << " | ";
-  			cout << userBoard[r] <<" ";
- 		}
- 		if(r == 2 || r == 5){
-  			cout << endl;
-		}
-  		for(int i= 0; i<9; k++){
-   			cout << "---";
- 		}
- 		cout << endl;
-	}		
-	
+   if (instance == 0) {return 0; }
+   cout << " |";
+   for (unsigned int k = 0; k < 9; k++) {
+	cout << k++ << "|";  //prints row numbers
+    }
+    cout << endl << "|";
+    for (unsigned int i = 0; i < 9; i++) {
+	cout << i++ << "|";
+   for (unsigned int j = 0; j < 9; j++) {
+	if (gameBoard[i][j] != 0) {
+		cout << gameBoard[i][j] << "|";
+	} else {
+	     cout << " " << "|";
+	}
+    }
+    cout << endl;
+   if (i == 2 || i == 5 || i == 8) {
+	cout << "|=====|=====|=====|" << endl;
+   }
+   else{
+	cout << "|-----|-----|-----|" << endl;
+   }
+ }		
 }
 
 void SudokuBoard::makeEntry(){
@@ -66,6 +78,34 @@ void SudokuBoard::getEntry(int row, int col, int cellValue){
 }
 
 void SudokuBoard::createGame(){
+   cout << "Select your difficulty (type 'easy' or 'hard'): " << endl; 
+   string difficulty; 
+   cin << difficulty; 
+    GameStrategy* diff; 
+   if (difficulty == "easy") { 
+         diff = new EasyGame(); 
+ }  
+   else if (difficulty == "hard") { 
+	diff  = new HardGame(); 
+}
+
+    int** array = diff->generateGame(); 
+    for (unsigned i = 0; i < 9; i++) { 
+	for (unsigned k = 0; k < 9; k++) { 
+            userBoard[i][k] = array[i][k];       	     
+	}
+    } 
+   
+   array = diff->generateSolution(); 
+   for (unsigned i = 0; i < 9; i++) {
+        for (unsigned k = 0; k < 9; k++) {
+            gameBoard[i][k] = array[i][k];
+        }
+    }
+
+
+     
+
 			
 }
 
