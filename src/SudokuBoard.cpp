@@ -33,7 +33,6 @@ int SudokuBoard::getScore(){
 }
 
 void SudokuBoard::printBoard(){
-<<<<<<< HEAD
    if (instance == 0) {return 0; }
    cout << " |";
    for (unsigned int k = 0; k < 9; k++) {
@@ -57,23 +56,7 @@ void SudokuBoard::printBoard(){
 	cout << "|-----|-----|-----|" << endl;
    }
  }		
-=======
-	for(int r=0; r < 9; r++){
-		for(int c =0; c< 9; c++){
-			if(c == 3 || c == 6)
-   			cout << " | ";
-  			cout << userBoard[r] <<" ";
- 		}
- 		if(r == 2 || r == 5){
-  			cout << endl;
-		}
-  		for(int i= 0; i<9; i++){
-   			cout << "---";
- 		}
- 		cout << endl;
-	}		
-	
->>>>>>> 50d65e9cfbb16ab3ce40d7ea29dc8ba1261ce25f
+
 }
 
 void SudokuBoard::makeEntry(){
