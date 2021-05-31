@@ -6,13 +6,13 @@
 class HardGame: public GameStrategy {
 public:
     HardGame(){}
-/*    ~HardGame(){
+    ~HardGame(){
 	for (unsigned i = 0; i < 9; i++) {
     	    delete board[i];
   	 }
   	 delete[] board;
 } 
-*/
+
     virtual int** generateGame(){
 	int x = 0;
             int y = 0;
@@ -59,14 +59,14 @@ protected:
 class EasyGame: public GameStrategy {
 public:
     EasyGame(){} 
-/*    ~EasyGame(){ 
+    ~EasyGame(){ 
   	 for (unsigned i = 0; i < 9; i++) { 
 		delete board[i]; 
 	   }
 
 	   delete[] board;
 	}
-  */
+  
     virtual int** generateGame(){
 	 int x = 0;
             int y = 0;
