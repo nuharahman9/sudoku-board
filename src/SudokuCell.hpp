@@ -2,7 +2,7 @@
 #define __SUDOKUCELL_HPP__
 
 #include "SudokuBoard.hpp"
-#include "Index.hpp"
+#include "index.hpp"
 #include <iostream>
 
 using namespace std;

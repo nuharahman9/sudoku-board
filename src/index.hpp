@@ -27,3 +27,5 @@ class Index : public SudokuCell{
 			}	
 		}
 };
+
+#endif
