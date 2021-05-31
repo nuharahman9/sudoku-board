@@ -21,8 +21,8 @@ class SudokuBoard {
 
 		 void getSolution();
 	protected:
-		int gameBoard [9][9];
-		int userBoard[9][9];
+		int gameBoard ** = nullptr;
+		int userBoard ** = nullptr;
 		int row;
 		int col;
 		int cellValue;
