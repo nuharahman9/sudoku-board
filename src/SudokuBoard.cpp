@@ -34,7 +34,9 @@ void SudokuBoard::printBoard(){
 }
 
 void SudokuBoard::makeEntry(){
+
 	int input;
+
 	cout << "Which row?" << endl;
 	cin >> input;
 	row = input;
@@ -44,7 +46,7 @@ void SudokuBoard::makeEntry(){
 	col = input;
 	
 	cout << "What number?" << endl;
-	cin >> input;
+	cin >> input;}
 	cellValue = input;
 	
 	this->getEntry(row, col, cellValue);
@@ -57,6 +59,11 @@ void SudokuBoard::getEntry(int row, int col, int cellValue){
 
 void SudokuBoard::createGame(){
 	//...		
+}
+
+void SudokuBoard::exitGame(){
+	cout << "Goodbye!" << endl;
+	exit(0);
 }
 
 void SudokuBoard::getSolution(){
