@@ -7,14 +7,12 @@ using namespace std;
 SudokuBoard* SudokuBoard::instance = 0;
 
 SudokuBoard* SudokuBoard::getInstance() {
-    if (instance == 0) {
-        instance = new SudokuBoard();
-    }
+    if (!instance) {
+        instance = new SudokuBoard;
+    	return instance;
+	}
 
-    return instance;
 }
-
-SudokuBoard::SudokuBoard(){}
 
 int SudokuBoard::getScore(){
 	for(int i=0; i < 9; i++){
@@ -28,7 +26,10 @@ int SudokuBoard::getScore(){
 }
 
 void SudokuBoard::printBoard(){
-   if (instance == 0) {return 0; }
+   if (!instance) {
+	return;
+	 }
+
    cout << " |";
    for (unsigned int k = 0; k < 9; k++) {
 	cout << k++ << "|";  //prints row numbers
@@ -79,16 +80,17 @@ void SudokuBoard::getEntry(int row, int col, int cellValue){
 }
 
 void SudokuBoard::createGame(){
-   cout << "Select your difficulty (type 'easy' or 'hard'): " << endl; 
-   string difficulty; 
-   cin << difficulty; 
-    GameStrategy* diff; 
-   if (difficulty == "easy") { 
-         diff = new EasyGame(); 
- }  
-   else if (difficulty == "hard") { 
-	diff  = new HardGame(); 
-}
+	string difficulty;  
+	cout << "Select your difficulty (type 'easy' or 'hard'): " << endl; 
+
+	cin >> difficulty; 
+	GameStrategy* diff; 
+	if (difficulty == "easy") { 
+        	diff = new EasyGame(); 
+	}  
+	else if (difficulty == "hard") { 
+		diff  = new HardGame(); 
+	}	
 
     int** array = diff->generateGame(); 
     for (unsigned i = 0; i < 9; i++) { 
