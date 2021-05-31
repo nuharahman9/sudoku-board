@@ -1,7 +1,7 @@
 #include "SudokuBoard.hpp"
 #include <iostream> 
 #include <string> 
-#include "GameStrategy.h"
+
 using namespace std; 
 
 SudokuBoard* SudokuBoard::instance = 0;
