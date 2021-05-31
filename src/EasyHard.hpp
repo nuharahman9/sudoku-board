@@ -5,10 +5,43 @@
 
 class HardGame: public GameStrategy {
 public:
-    HardGame();
-    ~HardGame(); 
-    virtual int** generateGame();
-    virtual int** generateSolution(); 
+    HardGame(){}
+    ~HardGame(){
+	for (unsigned i = 0; i < 9; i++) {
+    	    delete board[i];
+  	 }
+  	 delete[] board;
+} 
+
+    virtual int** generateGame(){
+	int x = 0;
+            int y = 0;
+            srand(0);
+            board = new int*[9];
+            for (unsigned i = 0; i < 9; i++) {
+                board[i] = new int[9];
+                for (unsigned j = 0; j < 9; j++) {
+                   board[i][j] = grid[i][j];
+                }
+            }
+            for (unsigned i = 0; i < 29; i++) {
+                x = rand() % 9;
+                y = rand() % 9;
+                board[x][y] = 0;
+
+            }
+            return board;
+	
+	}
+    virtual int** generateSolution(){
+	for (unsigned i = 0; i < 9; i++) { 
+        for (unsigned k = 0; k < 9; k++) {
+            board[i][k] = grid[i][k];
+        }
+   }
+  return board;
+} 
+
 protected:
      int** board = 0; 
      int grid[9][9] = {{5, 3, 4, 6, 7, 8, 9, 1, 2},
@@ -25,10 +58,44 @@ protected:
 
 class EasyGame: public GameStrategy {
 public:
-    EasyGame(); 
-    ~EasyGame(); 
-    virtual int** generateGame();
-    virtual int** generateSolution(); 
+    EasyGame(){} 
+    ~EasyGame(){ 
+  	 for (unsigned i = 0; i < 9; i++) { 
+		delete board[i]; 
+	   }
+
+	   delete[] board;
+	}
+  
+    virtual int** generateGame(){
+	 int x = 0;
+            int y = 0;
+            srand(0); 
+	    board = new int*[9];
+	    for (unsigned i = 0; i < 9; i++) { 
+		board[i] = new int[9]; 
+		for (unsigned j = 0; j < 9; j++) { 
+		   board[i][j] = grid[i][j]; 
+		}
+	    } 	            
+            for (unsigned i = 0; i < 29; i++) {
+                x = rand() % 9;
+                y = rand() % 9;
+                board[x][y] = 0;
+
+            }
+            return board;
+}
+    virtual int** generateSolution(){
+	for (unsigned i = 0; i < 9; i++) { 
+	for (unsigned k = 0; k < 9; k++) { 
+	    board[i][k] = grid[i][k]; 
+	}
+    
+   }
+   
+  return board; 
+} 
 protected:
     int** board = 0; 
     int grid[9][9] = {{4,3,1,6,7,9,5,2,8}, 

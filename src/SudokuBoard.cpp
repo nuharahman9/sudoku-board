@@ -14,6 +14,8 @@ SudokuBoard* SudokuBoard::getInstance() {
 
 }
 
+SudokuBoard::SudokuBoard(){}
+
 int SudokuBoard::getScore(){
 	for(int i=0; i < 9; i++){
 		for(int j=0; j <9; j++){
