@@ -8,7 +8,7 @@ using namespace std;
 
 class SudokuBoard {
 	public:
-   	 	 SudokuBoard();
+		 static SudokuBoard* getInstance();
 
   	  	 int getScore()=0;
  		 void printBoard()=0;
@@ -28,6 +28,9 @@ class SudokuBoard {
 		int col;
 		int cellValue;
 		int score;
+		static SudokuBoard* instance;
+	private:
+		SudokuBoard(); /* private constructor to prevent instancing */
 };
 #endif
 
