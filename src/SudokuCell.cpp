@@ -1,6 +1,4 @@
-#include "sudoku.cpp"
-#include "CellInterface.cpp"
-#include "SudokuCell.hpp"
+#include "SudokuBoard.hpp"
 #include <iostream>
 
 #include <unordered_set>
