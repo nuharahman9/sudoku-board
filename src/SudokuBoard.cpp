@@ -56,7 +56,7 @@ void SudokuBoard::getEntry(int row, int col, int cellValue){
 }
 
 void SudokuBoard::createGame(){
-	//...		
+			
 }
 
 void SudokuBoard::getSolution(){

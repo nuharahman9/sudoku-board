@@ -23,6 +23,7 @@ class SudokuBoard {
 	protected:
 		int gameBoard [9][9];
 		int userBoard[9][9];
+		
 		int row;
 		int col;
 		int cellValue;

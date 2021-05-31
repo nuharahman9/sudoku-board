@@ -9,10 +9,9 @@ using namespace std;
 class GameStrategy {
 public:
     GameStrategy() {}
-    virtual SudokuCell*[][] generateGame();
+    virtual int[][] generateGame();
     virtual int[][] generateSolution();
     virtual ~GameStrategy() = default;
-    virtual bool difficulty(SudokuBoard* board) const = 0;
 
 protected:
      int grid[9][9] = {{5, 3, 4, 6, 7, 8, 9, 1, 2},
