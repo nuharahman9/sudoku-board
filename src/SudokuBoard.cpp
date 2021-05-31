@@ -28,51 +28,54 @@ int SudokuBoard::getScore(){
 }
 
 void SudokuBoard::printBoard(){
-   if (!instance) {
-	return;
+	if (!instance) {
+		return;
 	 }
-
-   cout << " |";
-   for (unsigned int k = 0; k < 9; k++) {
-	cout << k++ << "|";  //prints row numbers
-    }
-    cout << endl << "|";
-    for (unsigned int i = 0; i < 9; i++) {
-	cout << i++ << "|";
-   for (unsigned int j = 0; j < 9; j++) {
-	if (gameBoard[i][j] != 0) {
-		cout << gameBoard[i][j] << "|";
-	} else {
-	     cout << " " << "|";
-	}
-    }
-    cout << endl;
-   if (i == 2 || i == 5 || i == 8) {
-	cout << "|=====|=====|=====|" << endl;
-   }
-   else{
-	cout << "|-----|-----|-----|" << endl;
-   }
- }		
+	
+	for(int i=0; i < 9; i++){
+		for(int j=0; j < 9; j++){
+			if(j ==3 || j == 6){
+				cout << " | ";
+			}
+			cout << userBoard[i][j] << " ";
+		}
+		if(i == 2 || i == 5){
+			cout << endl;
+		
+			for(int k =0; k < 9; k++){
+			cout << "---";
+			}
+		}
+		cout << endl;
+	}			
 
 }
 
 void SudokuBoard::makeEntry(){
-
-	int input;
-
-	cout << "Which row?" << endl;
-	cin >> input;
-	row = input;
-	
-	cout << "Which col?" << endl;
-	cin >> input;
-	col = input;
-	
-	cout << "What number?" << endl;
-	cin >> input;
-	cellValue = input;
-	
+	int input = 0;
+        cout << "Which row?" << endl;
+        cin >> input;  
+	while (input < 1 || input > 9) { 
+	   cout << "Invalid input! Please try again." << endl; 
+   	   cin >> input; 
+	}
+        this->row = input-1; 
+	input = 0; 
+  	cout << "Which column?" << endl;
+        cin >> input;
+        while (input < 1 || input > 9) {
+           cout << "Invalid input! Please try again." << endl;
+           cin >> input; 
+        }
+	this->col = input - 1; 
+	input = 0;
+        cout << "What number for your entry?" << endl;
+        cin >> input;
+        while (input < 1 || input > 9) {
+           cout << "Invalid input! Please try again." << endl;
+           cin >> input;
+        }
+	this->cellValue = input;	
 	this->getEntry(row, col, cellValue);
 }
 
