@@ -1,5 +1,6 @@
 #include "SudokuBoard.hpp"
-
+#include <iostream>
+using namespace std;
 SudokuBoard* SudokuBoard::instance = 0;
 
 SudokuBoard* SudokuBoard::getInstance() {
@@ -24,8 +25,8 @@ int SudokuBoard::getScore(){
 }
 
 void SudokuBoard::printBoard(){
-	for(int r=0; i < 9; i++){
-		for(int c =0; j< 9; j++){
+	for(int r=0; r < 9; r++){
+		for(int c =0; c< 9; c++){
 			if(c == 3 || c == 6)
    			cout << " | ";
   			cout << userBoard[r] <<" ";
@@ -33,7 +34,7 @@ void SudokuBoard::printBoard(){
  		if(r == 2 || r == 5){
   			cout << endl;
 		}
-  		for(int i= 0; i<9; k++){
+  		for(int i= 0; i<9; i++){
    			cout << "---";
  		}
  		cout << endl;
@@ -54,7 +55,7 @@ void SudokuBoard::makeEntry(){
 	col = input;
 	
 	cout << "What number?" << endl;
-	cin >> input;}
+	cin >> input;
 	cellValue = input;
 	
 	this->getEntry(row, col, cellValue);
@@ -75,8 +76,8 @@ void SudokuBoard::exitGame(){
 }
 
 void SudokuBoard::getSolution(){
-	for(int r=0; i < 9; i++){
-		for(int c =0; j< 9; j++){
+	for(int r=0; r< 9; r++){
+		for(int c =0; c< 9; c++){
 			if(c == 3 || c == 6)
    			cout << " | ";
   			cout << gameBoard[r] <<" ";
@@ -84,7 +85,7 @@ void SudokuBoard::getSolution(){
  		if(r == 2 || r == 5){
   			cout << endl;
 		}
-  		for(int i= 0; i<9; k++){
+  		for(int i= 0; i<9; i++){
    			cout << "---";
  		}
  		cout << endl;

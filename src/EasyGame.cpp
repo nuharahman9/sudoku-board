@@ -1,7 +1,8 @@
-#include "GameStrategy.hpp"
+#include "EasyGame.hpp"
 
 EasyGame::EasyGame() {}
-EasyGame::int** generateGame() {
+
+int** EasyGame::generateGame() {
             int x = 0;
             int y = 0;
             srand(0); 
@@ -20,7 +21,8 @@ EasyGame::int** generateGame() {
             }
             return board;
 }
-EasyGame::int** generateSolution() { 
+
+int** EasyGame::generateSolution() { 
    for (unsigned i = 0; i < 9; i++) { 
 	for (unsigned k = 0; k < 9; k++) { 
 	    board[i][k] = grid[i][k]; 
@@ -30,6 +32,7 @@ EasyGame::int** generateSolution() {
    
   return board; 
 }
+
 EasyGame::~EasyGame() { 
    for (unsigned i = 0; i < 9; i++) { 
 	delete board[i]; 

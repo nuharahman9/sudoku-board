@@ -1,9 +1,7 @@
 #ifndef __SUDOKUBOARD_HPP__
 #define __SUDOKUBOARD_HPP__
 #include <iostream>
-#include "GameStrategy.hpp"
-#include "SudokuCell.hpp"
-
+//#include "GameStrategy.hpp"
 using namespace std; 
 
 class SudokuBoard {
@@ -13,7 +11,7 @@ class SudokuBoard {
   	  	 int getScore();
  		 void printBoard();
 	
-		 void getEntry(int row, int column, int input)=0;
+		 void getEntry(int row, int column, int input);
    		 void makeEntry();
 
 		 void exitGame();
@@ -21,8 +19,8 @@ class SudokuBoard {
 
 		 void getSolution();
 	protected:
-		int gameBoard ** = nullptr;
-		int userBoard ** = nullptr;
+		int gameBoard [9][9];
+		int userBoard [9][9];
 		int row;
 		int col;
 		int cellValue;
