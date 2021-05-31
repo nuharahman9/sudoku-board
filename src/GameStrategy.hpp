@@ -7,12 +7,12 @@ using namespace std;
 class GameStrategy {
 public:
     GameStrategy() {}
-    virtual int** generateGame();
-    virtual int** generateSolution();
+    virtual int** generateGame()=0;
+    virtual int** generateSolution()=0;
     virtual ~GameStrategy() = default; 
 };
 
-
+/*
 class HardGame: public GameStrategy {
 public:
     HardGame();
@@ -32,6 +32,7 @@ protected:
                        {3, 4, 5, 2, 8, 6, 1, 7, 9}
                        };
 };
+
 class EasyGame: public GameStrategy {
 public:
     EasyGame(); 
@@ -52,6 +53,7 @@ protected:
    		  };
 	
 };
+*/
 
-
+#endif
 
