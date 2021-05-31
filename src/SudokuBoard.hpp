@@ -24,10 +24,10 @@ class SudokuBoard {
 	protected:
 		int gameBoard [9][9];
 		int userBoard [9][9];
-		int row;
-		int col;
-		int cellValue;
-		int score;
+		int row = -1;
+		int col = -1;
+		int cellValue = -1;
+		int score = 0;
 		static SudokuBoard* instance;
 	private:
 		SudokuBoard(); /* private constructor to prevent instancing */
