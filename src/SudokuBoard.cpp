@@ -70,7 +70,7 @@ void SudokuBoard::makeEntry(){
 	   cout << "Invalid input!" << endl; 
    	   return;  
 	}
-        this->row = input - 1; 
+        this->row = input-1; 
 	input = 0; 
   	cout << "Which column?" << endl;
         cin >> input;
@@ -134,19 +134,21 @@ void SudokuBoard::exitGame(){
 }
 
 void SudokuBoard::getSolution(){
-	for(int r=0; r< 9; r++){
-		for(int c =0; c< 9; c++){
-			if(c == 3 || c == 6)
-   			cout << " | ";
-  			cout << gameBoard[r] <<" ";
- 		}
- 		if(r == 2 || r == 5){
-  			cout << endl;
+	for(int i=0; i < 9; i++){
+		for(int j=0; j < 9; j++){
+			if(j ==3 || j == 6){
+				cout << " | ";
+			}
+			cout << gameBoard[i][j] << " ";
 		}
-  		for(int i= 0; i<9; i++){
-   			cout << "---";
- 		}
- 		cout << endl;
-	}		
+		if(i == 2 || i == 5){
+			cout << endl;
+		
+			for(int k =0; k < 9; k++){
+			cout << "---";
+			}
+		}
+		cout << endl;
+	}	
 		
 }

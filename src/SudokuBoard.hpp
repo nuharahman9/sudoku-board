@@ -26,7 +26,7 @@ class SudokuBoard {
 		int userBoard [9][9];
 		int row = -1;
 		int col = -1;
-		int cellValue = -1;
+		int cellValue;
 		int score = 0;
 		static SudokuBoard* instance;
 	private:
