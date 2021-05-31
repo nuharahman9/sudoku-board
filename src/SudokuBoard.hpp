@@ -10,16 +10,16 @@ class SudokuBoard {
 	public:
 		 static SudokuBoard* getInstance();
 
-  	  	 int getScore()=0;
- 		 void printBoard()=0;
+  	  	 int getScore();
+ 		 void printBoard();
 	
 		 void getEntry(int row, int column, int input)=0;
-   		 void makeEntry()=0;
+   		 void makeEntry();
 
 		 void exitGame();
    		 void createGame();
 
-		 void getSolution()=0;
+		 void getSolution();
 	protected:
 		int gameBoard [9][9];
 		int userBoard[9][9];
