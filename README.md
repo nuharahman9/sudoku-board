@@ -72,6 +72,7 @@
  > Screenshots of the input/output after running your application
  ## Installation/Usage
  > Instructions on installing and running your application
+ > To run the Sudoku game, type g++ -g -O0 main.cpp -o Sudoku and then use the ./Sudoku command.
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
