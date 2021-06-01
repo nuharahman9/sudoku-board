@@ -24,7 +24,7 @@ public:
                    board[i][j] = grid[i][j];
                 }
             }
-            for (unsigned i = 0; i < 29; i++) {
+            for (unsigned i = 0; i < 57; i++) {
                 x = rand() % 9;
                 y = rand() % 9;
                 board[x][y] = 0;
