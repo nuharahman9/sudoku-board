@@ -13,6 +13,7 @@ TEST(exitGame, functionCall){
         test->createGame();
 
         ASSERT_EXIT(test->exitGame(), ::testing::ExitedWithCode(0), "");
+	delete test;
 }
 
 TEST(createGame, createEasy){
@@ -20,6 +21,7 @@ TEST(createGame, createEasy){
 	test->createGame();
 	
 	EXPECT_EQ(test->isEasy(), 1);	
+	delete test;
 }
 
 TEST(createGame, createEasy2){
@@ -27,6 +29,7 @@ TEST(createGame, createEasy2){
        test->createGame();
 
         EXPECT_EQ(test->isHard(), 0);
+	delete test;
 }
 
 TEST(createGame, createHard){
@@ -34,6 +37,7 @@ TEST(createGame, createHard){
        test->createGame();
 
         EXPECT_EQ(test->isHard(), 1);
+	delete test;
 }
 
 TEST(createGame, createHard2){
@@ -41,6 +45,7 @@ TEST(createGame, createHard2){
        test->createGame();
 
         EXPECT_EQ(test->isEasy(), 0);
+	delete test;
 }
 
 TEST(makeEntry, gettingCol3){
@@ -50,6 +55,7 @@ TEST(makeEntry, gettingCol3){
 	test->makeEntry();
 	
 	EXPECT_EQ(test->getCol(), 3);
+	delete test;
 }
 
 TEST(makeEntry, gettingRow9){
@@ -59,6 +65,7 @@ TEST(makeEntry, gettingRow9){
         test->makeEntry();
 
         EXPECT_EQ(test->getRow(), 9);
+	delete test;
 }
 
 TEST(makeEntry, gettingCellValue2){
@@ -68,6 +75,7 @@ TEST(makeEntry, gettingCellValue2){
         test->makeEntry();
 
         EXPECT_EQ(test->getCellValue(), 2);
+	delete test;
 }
 
 TEST(getScore, emptyEasy){
@@ -77,7 +85,8 @@ TEST(getScore, emptyEasy){
 	int scoreChecker;
 	scoreChecker = 81- test->getEmptySlots();
 
-	EXPECT_EQ(test->getScore(), scoreChecker); 
+	EXPECT_EQ(test->getScore(), scoreChecker);
+	delete test; 
 }
 
 TEST(getScore, emptyHard){
@@ -88,6 +97,7 @@ TEST(getScore, emptyHard){
 	scoreChecker = 81 - test->getEmptySlots();
 
 	EXPECT_EQ(test->getScore(), scoreChecker);
+	delete test;
 }
 
 
