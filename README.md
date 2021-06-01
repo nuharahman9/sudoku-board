@@ -36,7 +36,20 @@
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > Easy Game :
+ <img width="551" alt="Screen Shot 2021-06-01 at 12 36 42 AM" src="https://user-images.githubusercontent.com/77302524/120285073-c1982a00-c271-11eb-9dce-a418d141e3a9.png">
+ 
+ <img width="529" alt="Screen Shot 2021-06-01 at 12 36 50 AM" src="https://user-images.githubusercontent.com/77302524/120285305-f7d5a980-c271-11eb-9ce5-4aa74538ebb4.png">
+ 
+ <img width="477" alt="Screen Shot 2021-06-01 at 12 37 02 AM" src="https://user-images.githubusercontent.com/77302524/120285350-00c67b00-c272-11eb-8635-08dcf46b5e0d.png">
+ 
+ <img width="427" alt="Screen Shot 2021-06-01 at 12 37 10 AM" src="https://user-images.githubusercontent.com/77302524/120285383-09b74c80-c272-11eb-9478-383fba14a4c0.png">
+ 
+ >Hard Game :
+ <img width="538" alt="Screen Shot 2021-06-01 at 12 38 27 AM" src="https://user-images.githubusercontent.com/77302524/120285418-150a7800-c272-11eb-95ab-8bd3a495ce89.png">
+ 
+ <img width="507" alt="Screen Shot 2021-06-01 at 12 38 35 AM" src="https://user-images.githubusercontent.com/77302524/120285452-1cca1c80-c272-11eb-94ac-efa9d4b99931.png">
+ 
  ## Installation/Usage
  > Instructions on installing and running your application
  > To run the Sudoku game, type g++ -g -O0 main.cpp -o Sudoku and then use the ./Sudoku command.
