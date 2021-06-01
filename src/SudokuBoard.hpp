@@ -25,12 +25,12 @@ class SudokuBoard {
 		 void getSolution();
 		
 	//functions for testing
-		 void setDifficulty(string testString);
 		 bool isEasy();
 		 bool isHard();
 		 int getCol();
 		 int getRow();
 		 int getCellValue();
+		 int getEmptySlots();
 	protected:
 		int gameBoard [9][9];
 		int userBoard [9][9];
@@ -39,7 +39,6 @@ class SudokuBoard {
 		int emptySlots = 0; 
 		int cellValue;
 		static SudokuBoard* instance;
-		string difficulty;
 		bool easy;
 		bool hard;
 		

@@ -18,7 +18,6 @@ TEST(exitGame, functionCall){
 
 TEST(createGame, createEasy){
 	SudokuBoard *test = test->getInstance();
-	test->setDifficulty("easy");
 	test->createGame();
 	
 	EXPECT_EQ(test->isEasy(), 1);	
@@ -26,31 +25,27 @@ TEST(createGame, createEasy){
 
 TEST(createGame, createEasy2){
 	SudokuBoard *test = test->getInstance();
-        test->setDifficulty("easy");
-        test->createGame();
+       test->createGame();
 
         EXPECT_EQ(test->isHard(), 0);
 }
 
 TEST(createGame, createHard){
         SudokuBoard *test = test->getInstance();
-        test->setDifficulty("hard");
-        test->createGame();
+       test->createGame();
 
         EXPECT_EQ(test->isHard(), 1);
 }
 
 TEST(createGame, createHard2){
         SudokuBoard *test = test->getInstance();
-        test->setDifficulty("hard");
-        test->createGame();
+       test->createGame();
 
         EXPECT_EQ(test->isEasy(), 0);
 }
 
 TEST(makeEntry, gettingCol3){
 	SudokuBoard *test = test->getInstance();
-	test->setDifficulty("easy");
 	test->createGame();
 	
 	test->makeEntry();
@@ -60,8 +55,7 @@ TEST(makeEntry, gettingCol3){
 
 TEST(makeEntry, gettingRow9){
         SudokuBoard *test = test->getInstance();
-        test->setDifficulty("easy");
-        test->createGame();
+       test->createGame();
 
         test->makeEntry();
 
@@ -70,12 +64,32 @@ TEST(makeEntry, gettingRow9){
 
 TEST(makeEntry, gettingCellValue2){
         SudokuBoard *test = test->getInstance();
-        test->setDifficulty("easy");
-        test->createGame();
+       test->createGame();
 
         test->makeEntry();
 
         EXPECT_EQ(test->getCellValue, 2);
 }
+
+TEST(getScore, emptyEasy){
+	SudokuBoard *test = test->getInstance();
+	test->createGame();
+
+	int scoreChecker;
+	scoreChecker = 81- test->getEmptySlots();
+
+	EXPECT_EQ(test->getScore(), scoreChecker); 
+}
+
+TEST(getScore, emptyHard){
+	SudokuBoard* test = test->getInstance();
+	test->createGame();
+
+	int scoreChecker;
+	scoreChecker = 81 - test->getEmptySlots();
+
+	EXPECT_EQ(test->getScore(), scoreChecker);
+}
+
 
 #endif

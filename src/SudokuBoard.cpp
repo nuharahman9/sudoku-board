@@ -114,9 +114,6 @@ void SudokuBoard::getEntry(int row, int col, int cellValue){
 	userBoard[row][col] = cellValue;
 }
 
-void SudokuBoard::setDifficulty(string testString){
-	difficulty = testString;
-}
 bool SudokuBoard::isEasy(){
 	return easy;
 }
@@ -162,6 +159,10 @@ void SudokuBoard::createGame(){
     }
 	delete diff;
  	  				
+}
+
+int SudokuBoard::getEmptySlots(){
+	return emptySlots;
 }
 
 void SudokuBoard::exitGame(){
