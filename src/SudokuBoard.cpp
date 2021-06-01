@@ -28,7 +28,8 @@ int SudokuBoard::getScore(){
 			}
 		}
 	}
-	cout << score << endl;
+	score = score - pointsAvailable;
+	cout << endl << "SCORE: " <<  score << endl;
 	return score;	
 }
 
