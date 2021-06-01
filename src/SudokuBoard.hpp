@@ -10,7 +10,8 @@ using namespace std;
 class SudokuBoard {
 	public:
 		 static SudokuBoard* getInstance();
-
+		 
+		 ~SudokuBoard();
   	  	 int getScore();
  		 void printBoard();
 	

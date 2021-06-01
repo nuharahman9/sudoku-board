@@ -2,21 +2,25 @@
 #define __EASY_HARD_HPP__
 
 #include "GameStrategy.hpp"
+#include "time.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 class HardGame: public GameStrategy {
 public:
     HardGame(){}
     ~HardGame(){
-	for (unsigned i = 0; i < 9; i++) {
-    	    delete board[i];
+	for (unsigned i = 0; i < 9; ++i) {
+    	    delete[] board[i];
   	 }
   	 delete[] board;
+
 } 
 
     virtual int** generateGame(){
 	int x = 0;
             int y = 0;
-            srand(0);
+            srand(time(NULL));
             board = new int*[9];
             for (unsigned i = 0; i < 9; i++) {
                 board[i] = new int[9];
@@ -31,7 +35,7 @@ public:
 
             }
             return board;
-	
+			
 	}
     virtual int** generateSolution(){
 	for (unsigned i = 0; i < 9; i++) { 
@@ -60,8 +64,8 @@ class EasyGame: public GameStrategy {
 public:
     EasyGame(){} 
     ~EasyGame(){ 
-  	 for (unsigned i = 0; i < 9; i++) { 
-		delete board[i]; 
+  	 for (unsigned i = 0; i < 9; ++i) { 
+		delete [] board[i]; 
 	   }
 
 	   delete[] board;
@@ -70,7 +74,7 @@ public:
     virtual int** generateGame(){
 	 int x = 0;
             int y = 0;
-            srand(0); 
+            srand(time(NULL)); 
 	    board = new int*[9];
 	    for (unsigned i = 0; i < 9; i++) { 
 		board[i] = new int[9]; 
