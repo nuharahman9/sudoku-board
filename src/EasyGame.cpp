@@ -35,7 +35,7 @@ int** EasyGame::generateSolution() {
 
 EasyGame::~EasyGame() { 
    for (unsigned i = 0; i < 9; i++) { 
-	delete board[i]; 
+	delete[] board[i]; 
    }
    delete[] board; 
 }

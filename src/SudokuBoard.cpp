@@ -28,6 +28,7 @@ int SudokuBoard::getScore(){
 			}
 		}
 	}
+	cout << score << endl;
 	return score;	
 }
 
@@ -95,7 +96,7 @@ void SudokuBoard::makeEntry(){
 }
 
 void SudokuBoard::getEntry(int row, int col, int cellValue){
-	//double check
+	
 	userBoard[row][col] = cellValue;
 }
 
@@ -127,9 +128,7 @@ void SudokuBoard::createGame(){
     }
 
 	delete diff;
-     
-
-			
+ 	  				
 }
 
 void SudokuBoard::exitGame(){
