@@ -3,7 +3,7 @@
 
 #include "gtest/gtest.h"
 #include "src/SudokuBoard.cpp"
-
+#include <cstdlib>
 #include <iostream>
 
 using namespace std;
@@ -13,7 +13,8 @@ TEST(exitGame, functionCall){
         test->createGame();
 
         ASSERT_EXIT(test->exitGame(), ::testing::ExitedWithCode(0), "");
-//	delete test;
+
+	atexit(SudokuBoard::StaticDestructor);
 }
 
 TEST(createGame, createEasy){
