@@ -48,6 +48,7 @@
  
  ## Installation/Usage
  > Instructions on installing and running your application
- > To run the Sudoku game, type g++ -g -O0 main.cpp -o Sudoku and then use the ./Sudoku command.
+ > To run the Sudoku game, type g++ main.cpp src/SudokuBoard.cpp -o Sudoku and then use the ./Sudoku command.
+ > Or type command cmake3 . and then make and run ./Sudoku to play.
  ## Testing
  > Our project was tested using the google test submodule. We conducted unit tests for various functions implemented in our project.
