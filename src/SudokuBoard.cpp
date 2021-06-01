@@ -21,15 +21,16 @@ SudokuBoard::~SudokuBoard(){
 SudokuBoard::SudokuBoard(){}
 
 int SudokuBoard::getScore(){
+	int score = 0; 
 	for(int i=0; i < 9; i++){
 		for(int j=0; j <9; j++){
-			if(userBoard[i][j] == gameBoard[i][j]){
+			if((userBoard[i][j] == gameBoard[i][j])){
 				score++;
 			}
 		}
 	}
-	score = score - pointsAvailable;
-	cout << endl << "SCORE: " <<  score << endl;
+	score = score - emptySlots;
+	cout << endl << "SCORE: " <<  score << "/" << emptySlots << endl;
 	return score;	
 }
 
@@ -112,24 +113,18 @@ bool SudokuBoard::isHard(){
 }
 
 void SudokuBoard::createGame(){
-//	string difficulty = "";  
+	string difficulty = "";  
 	cout << "Select your difficulty (type 'easy' or 'hard'): " << endl; 
 	GameStrategy* diff;
         while (difficulty != "easy" || difficulty != "hard") {
 		cin >> difficulty;   
 		if (difficulty == "easy") { 
-        		diff = new EasyGame(); 
-			easy = true;
-			hard = false;
-			this->pointsAvailable = 52;
+        		diff = new EasyGame();
 			break;  
 		}  
 		else if (difficulty == "hard") { 
 			diff  = new HardGame();
-			hard = true;
-			easy = false;
-			this->pointsAvailable = 24;
-			break;   
+			break;  
 		}
 		else { 
 		   cout << "invalid input! Please try again." << endl;  			
@@ -139,9 +134,13 @@ void SudokuBoard::createGame(){
     int** array = diff->generateGame(); 
     for (unsigned i = 0; i < 9; i++) { 
 	for (unsigned k = 0; k < 9; k++) { 
-            userBoard[i][k] = array[i][k];       	     
+            userBoard[i][k] = array[i][k];
+	    if (array[i][k] == 0) { 
+		emptySlots++; 
+	   }       	     
 	}
-    } 
+    }
+     emptySlots = 81 - emptySlots;  
    
    array = diff->generateSolution(); 
    for (unsigned i = 0; i < 9; i++) {
