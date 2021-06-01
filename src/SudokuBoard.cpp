@@ -21,7 +21,8 @@ SudokuBoard::~SudokuBoard(){
 SudokuBoard::SudokuBoard(){}
 
 int SudokuBoard::getScore(){
-	int score = 0; 
+	int score = 0;
+	int temp; 
 	for(int i=0; i < 9; i++){
 		for(int j=0; j <9; j++){
 			if((userBoard[i][j] == gameBoard[i][j])){
@@ -29,7 +30,8 @@ int SudokuBoard::getScore(){
 			}
 		}
 	}
-	score = score - emptySlots;
+	temp = 81-emptySlots;
+	score = score - temp;
 	cout << endl << "SCORE: " <<  score << "/" << emptySlots << endl;
 	return score;	
 }
@@ -153,7 +155,7 @@ void SudokuBoard::createGame(){
 	   }       	     
 	}
     }
-     emptySlots = 81 - emptySlots;  
+//     emptySlots = 81 - emptySlots;  
    
    array = diff->generateSolution(); 
    for (unsigned i = 0; i < 9; i++) {
@@ -165,31 +167,38 @@ void SudokuBoard::createGame(){
  	  				
 }
 
-int SudokuBoard::getEmptySlots(){
-	return emptySlots;
-}
-
 void SudokuBoard::exitGame(){
 	cout << "Goodbye!" << endl;
 	exit(0);
 }
 
 void SudokuBoard::getSolution(){
+	cout << "   ";
+        for (unsigned int i = 0; i < 9; i++) { 
+  	  cout << (i + 1) << ' ';
+  	  if (i == 2 || i == 5) { 
+		cout << " | "; 
+	}
+	}
+        cout << endl << " *************************" << endl;
+	
 	for(int i=0; i < 9; i++){
+             cout << (i + 1) << "* "; 
 		for(int j=0; j < 9; j++){
 			if(j ==3 || j == 6){
 				cout << " | ";
 			}
-			cout << gameBoard[i][j] << " ";
+			if (gameBoard[i][j] != 0) { 
+		          cout << gameBoard[i][j] << " "; } 
+			else { cout << "  "; } 
+		
 		}
 		if(i == 2 || i == 5){
 			cout << endl;
 		
-			for(int k =0; k < 9; k++){
-			cout << "---";
-			}
+			cout << "**---------------------------"; 
 		}
 		cout << endl;
-	}	
+	}			
 		
 }
