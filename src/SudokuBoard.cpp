@@ -102,6 +102,16 @@ void SudokuBoard::getEntry(int row, int col, int cellValue){
 	userBoard[row][col] = cellValue;
 }
 
+void SudokuBoard::setDifficulty(string testString){
+	difficulty = testString;
+}
+bool SudokuBoard::isEasy(){
+	return easy;
+}
+bool SudokuBoard::isHard(){
+	return hard;
+}
+
 void SudokuBoard::createGame(){
 	string difficulty = "";  
 	cout << "Select your difficulty (type 'easy' or 'hard'): " << endl; 
@@ -114,8 +124,7 @@ void SudokuBoard::createGame(){
 		}  
 		else if (difficulty == "hard") { 
 			diff  = new HardGame();
-			break;   
-		}
+			break;  
 		else { 
 		   cout << "invalid input! Please try again." << endl;  			
 	} 	
