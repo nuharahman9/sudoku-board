@@ -4,6 +4,7 @@
 //#include "GameStrategy.hpp"
 #include "EasyHard.hpp" 
 #include <string>
+#include <ostream>
 
 using namespace std; 
 
@@ -22,16 +23,27 @@ class SudokuBoard {
 		 static void StaticDestructor(); 
 		 void getSolution();
 		
-	protected: 
+	//functions for testing
+		 bool isEasy();
+		 bool isHard();
+		 int getCol();
+		 int getRow();
+		 int getCellValue();
+		
+	protected:
 		int gameBoard [9][9];
 		int userBoard [9][9];
 		int row = -1;
 		int col = -1; 
 		int emptySlots = 0; 
-		int cellValue = 0;
+		int cellValue;
 		static SudokuBoard* instance; 
 		string difficulty = ""; 
-	private: 
+		static SudokuBoard* instance;
+		bool easy;
+		bool hard;
+		
+	private:
 		SudokuBoard(); /* private constructor to prevent instancing */
 };
 

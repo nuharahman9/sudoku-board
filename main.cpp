@@ -1,6 +1,6 @@
-#include "src/SudokuBoard.hpp"
-//#include "src/SudokuBoard.cpp"
+#include "src/SudokuBoard.cpp"
 #include <iostream> 
+
 
 using namespace std; 
 
@@ -20,7 +20,7 @@ int main() {
 	input = 'x'; 
 	while (input != 'd') { 
 	   cout << endl <<  "Menu Controls:" << endl << "a - Make an entry" << endl << "b - View board" << endl << 
-           "c - Get current score" << endl << "d - Quit Game" << endl; 
+           "c - Get current score" << endl << "d - Quit Game" << endl << "e - Show solution" <<endl; 
 	    cout << "Select an option:" << endl; 
 	    cin.clear();  
 	    cin >> input; 
@@ -32,6 +32,8 @@ int main() {
 		test->getScore(); 
 	   } else if (input == 'd') { 
 		test->exitGame(); 		
+	  } else if(input == 'e'){
+		test->getSolution();
 	   } else { 
 		cout << "Invalid input! Please try again." << endl; 
 	  }

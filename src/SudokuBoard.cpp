@@ -24,7 +24,8 @@ void SudokuBoard::StaticDestructor() {
 SudokuBoard::SudokuBoard(){}
 
 int SudokuBoard::getScore(){
-	int score = 0; 
+	int score = 0;
+	int temp; 
 	for(int i=0; i < 9; i++){
 		for(int j=0; j <9; j++){
 			if((userBoard[i][j] == gameBoard[i][j])){
@@ -32,7 +33,8 @@ int SudokuBoard::getScore(){
 			}
 		}
 	}
-	score = score - emptySlots;
+	temp = 81-emptySlots;
+	score = score - temp;
 	cout << endl << "SCORE: " <<  score << "/" << emptySlots << endl;
 	return score;	
 }
@@ -69,7 +71,7 @@ void SudokuBoard::printBoard(){
 		}
 		cout << endl;
 	}			
-
+		
 }
 
 void SudokuBoard::makeEntry(){
@@ -100,10 +102,31 @@ void SudokuBoard::makeEntry(){
 	this->getEntry(row, col, cellValue);
 }
 
+int SudokuBoard::getCol(){
+	return col + 1;
+}
+
+int SudokuBoard::getRow(){
+	return row + 1;
+}
+
+int SudokuBoard::getCellValue(){
+	return cellValue;
+}
+
 void SudokuBoard::getEntry(int row, int col, int cellValue){
 	
 	userBoard[row][col] = cellValue;
 }
+
+
+bool SudokuBoard::isEasy(){
+	return easy;
+}
+bool SudokuBoard::isHard(){
+	return hard;
+}
+
 
 void SudokuBoard::createGame(){
 	string difficulty = "";  
@@ -113,10 +136,14 @@ void SudokuBoard::createGame(){
 		cin >> difficulty;   
 		if (difficulty == "easy") { 
         		diff = new EasyGame();
+			easy =1;
+			hard =0;
 			break;  
 		}  
 		else if (difficulty == "hard") { 
 			diff  = new HardGame();
+			hard = 1;
+			easy =0;
 			break;  
 		}
 		else { 
@@ -134,7 +161,9 @@ void SudokuBoard::createGame(){
 	   }       	     
 	}
     }
-     emptySlots = 81 - emptySlots;  
+
+//     emptySlots = 81 - emptySlots;  
+   
 
    array = diff->generateSolution(); 
    for (unsigned i = 0; i < 9; i++) {
@@ -155,21 +184,32 @@ void SudokuBoard::exitGame(){
 }
 
 void SudokuBoard::getSolution(){
+	cout << "   ";
+        for (unsigned int i = 0; i < 9; i++) { 
+  	  cout << (i + 1) << ' ';
+  	  if (i == 2 || i == 5) { 
+		cout << " | "; 
+	}
+	}
+        cout << endl << " *************************" << endl;
+	
 	for(int i=0; i < 9; i++){
+             cout << (i + 1) << "* "; 
 		for(int j=0; j < 9; j++){
 			if(j ==3 || j == 6){
 				cout << " | ";
 			}
-			cout << gameBoard[i][j] << " ";
+			if (gameBoard[i][j] != 0) { 
+		          cout << gameBoard[i][j] << " "; } 
+			else { cout << "  "; } 
+		
 		}
 		if(i == 2 || i == 5){
 			cout << endl;
 		
-			for(int k =0; k < 9; k++){
-			cout << "---";
-			}
+			cout << "**---------------------------"; 
 		}
 		cout << endl;
-	}	
+	}			
 		
 }
