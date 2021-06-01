@@ -4,6 +4,7 @@
 //#include "GameStrategy.hpp"
 #include "EasyHard.hpp"
 #include <string>
+#include <ostream>
 
 using namespace std; 
 
@@ -27,6 +28,9 @@ class SudokuBoard {
 		 void setDifficulty(string testString);
 		 bool isEasy();
 		 bool isHard();
+		 int getCol();
+		 int getRow();
+		 int getCellValue();
 	protected:
 		int gameBoard [9][9];
 		int userBoard [9][9];
@@ -39,6 +43,7 @@ class SudokuBoard {
 		string difficulty;
 		bool easy;
 		bool hard;
+		
 	private:
 		SudokuBoard(); /* private constructor to prevent instancing */
 };
