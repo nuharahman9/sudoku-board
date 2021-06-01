@@ -108,15 +108,16 @@ void SudokuBoard::createGame(){
 		cin >> difficulty;   
 		if (difficulty == "easy") { 
         		diff = new EasyGame(); 
-			this->pointsAvailable = 52; 
+			this->pointsAvailable = 52;
+			break;  
 		}  
 		else if (difficulty == "hard") { 
 			diff  = new HardGame();
-			this->pointsAvailable = 24;  
+			this->pointsAvailable = 24;
+			break;   
 		}
 		else { 
-		   cout << "invalid input! Please try again." << endl; 
-		   cin.clear(); 			
+		   cout << "invalid input! Please try again." << endl;  			
 	} 	
      }
 
