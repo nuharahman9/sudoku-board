@@ -4,7 +4,6 @@
 #include "gtest/gtest.h"
 #include "src/SudokuBoard.cpp"
 
-
 #include <iostream>
 
 using namespace std;
@@ -16,4 +15,5 @@ TEST(exitGame, functionCall){
         ASSERT_EXIT(test->exitGame(), ::testing::ExitedWithCode(0), "");
 }
 
+	  		  
 #endif
