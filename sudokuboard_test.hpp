@@ -82,10 +82,7 @@ TEST(getScore, emptyEasy){
 	SudokuBoard *test = test->getInstance();
 	test->createGame();
 
-	int scoreChecker;
-	scoreChecker = 81- test->getEmptySlots();
-
-	EXPECT_EQ(test->getScore(), scoreChecker);
+	EXPECT_EQ(test->getScore(), 0);
 	delete test; 
 }
 
@@ -93,10 +90,7 @@ TEST(getScore, emptyHard){
 	SudokuBoard* test = test->getInstance();
 	test->createGame();
 
-	int scoreChecker;
-	scoreChecker = 81 - test->getEmptySlots();
-
-	EXPECT_EQ(test->getScore(), scoreChecker);
+	EXPECT_EQ(test->getScore(), 0);
 	delete test;
 }
 

@@ -129,10 +129,14 @@ void SudokuBoard::createGame(){
 		cin >> difficulty;   
 		if (difficulty == "easy") { 
         		diff = new EasyGame();
+			easy =1;
+			hard =0;
 			break;  
 		}  
 		else if (difficulty == "hard") { 
 			diff  = new HardGame();
+			hard = 1;
+			easy =0;
 			break;  
 		}
 		else { 
