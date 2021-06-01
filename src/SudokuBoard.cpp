@@ -14,6 +14,10 @@ SudokuBoard* SudokuBoard::getInstance() {
 
 }
 
+SudokuBoard::~SudokuBoard(){
+	delete instance;
+}
+
 SudokuBoard::SudokuBoard(){}
 
 int SudokuBoard::getScore(){
@@ -122,7 +126,7 @@ void SudokuBoard::createGame(){
         }
     }
 
-
+	delete diff;
      
 
 			
