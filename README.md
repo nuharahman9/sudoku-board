@@ -49,6 +49,7 @@
  <img width="538" alt="Screen Shot 2021-06-01 at 12 38 27 AM" src="https://user-images.githubusercontent.com/77302524/120285418-150a7800-c272-11eb-95ab-8bd3a495ce89.png">
  
  <img width="507" alt="Screen Shot 2021-06-01 at 12 38 35 AM" src="https://user-images.githubusercontent.com/77302524/120285452-1cca1c80-c272-11eb-94ac-efa9d4b99931.png">
+ 
  ## Installation/Usage
  > Instructions on installing and running your application
  > To run the Sudoku game, type g++ -g -O0 main.cpp -o Sudoku and then use the ./Sudoku command.
