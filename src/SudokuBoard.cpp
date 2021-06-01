@@ -66,7 +66,7 @@ void SudokuBoard::printBoard(){
 		}
 		cout << endl;
 	}			
-
+		
 }
 
 void SudokuBoard::makeEntry(){
@@ -95,6 +95,18 @@ void SudokuBoard::makeEntry(){
         }
 	this->cellValue = input;	
 	this->getEntry(row, col, cellValue);
+}
+
+int SudokuBoard::getCol(){
+	return col + 1;
+}
+
+int SudokuBoard::getRow(){
+	return row + 1;
+}
+
+int SudokuBoard::getCellValue(){
+	return cellValue;
 }
 
 void SudokuBoard::getEntry(int row, int col, int cellValue){
