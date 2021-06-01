@@ -48,5 +48,34 @@ TEST(createGame, createHard2){
         EXPECT_EQ(test->isEasy(), 0);
 }
 
+TEST(makeEntry, gettingCol3){
+	SudokuBoard *test = test->getInstance();
+	test->setDifficulty("easy");
+	test->createGame();
+	
+	test->makeEntry();
+	
+	EXPECT_EQ(test->getCol(), 3);
+}
+
+TEST(makeEntry, gettingRow9){
+        SudokuBoard *test = test->getInstance();
+        test->setDifficulty("easy");
+        test->createGame();
+
+        test->makeEntry();
+
+        EXPECT_EQ(test->getRow(), 9);
+}
+
+TEST(makeEntry, gettingCellValue2){
+        SudokuBoard *test = test->getInstance();
+        test->setDifficulty("easy");
+        test->createGame();
+
+        test->makeEntry();
+
+        EXPECT_EQ(test->getCellValue, 2);
+}
 
 #endif
