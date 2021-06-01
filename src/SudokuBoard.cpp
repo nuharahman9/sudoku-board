@@ -98,11 +98,11 @@ void SudokuBoard::makeEntry(){
 }
 
 int SudokuBoard::getCol(){
-	return col;
+	return col + 1;
 }
 
 int SudokuBoard::getRow(){
-	return row;
+	return row + 1;
 }
 
 int SudokuBoard::getCellValue(){

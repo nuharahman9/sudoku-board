@@ -4,7 +4,6 @@
 #include "gtest/gtest.h"
 #include "src/SudokuBoard.cpp"
 
-
 #include <iostream>
 
 using namespace std;
@@ -68,7 +67,7 @@ TEST(makeEntry, gettingCellValue2){
 
         test->makeEntry();
 
-        EXPECT_EQ(test->getCellValue, 2);
+        EXPECT_EQ(test->getCellValue(), 2);
 }
 
 TEST(getScore, emptyEasy){
