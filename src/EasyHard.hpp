@@ -7,8 +7,8 @@ class HardGame: public GameStrategy {
 public:
     HardGame(){}
     ~HardGame(){
-	for (unsigned i = 0; i < 9; i++) {
-    	    delete board[i];
+	for (unsigned i = 0; i < 9; ++i) {
+    	    delete[] board[i];
   	 }
   	 delete[] board;
 } 
@@ -60,8 +60,8 @@ class EasyGame: public GameStrategy {
 public:
     EasyGame(){} 
     ~EasyGame(){ 
-  	 for (unsigned i = 0; i < 9; i++) { 
-		delete board[i]; 
+  	 for (unsigned i = 0; i < 9; ++i) { 
+		delete [] board[i]; 
 	   }
 
 	   delete[] board;
