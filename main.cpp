@@ -1,5 +1,4 @@
 #include "src/SudokuBoard.hpp"
-#include "src/SudokuBoard.cpp"
 #include <iostream> 
 #include <ostream>
 #include <sstream>
