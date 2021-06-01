@@ -125,6 +125,7 @@ void SudokuBoard::createGame(){
 		else if (difficulty == "hard") { 
 			diff  = new HardGame();
 			break;  
+		}
 		else { 
 		   cout << "invalid input! Please try again." << endl;  			
 	} 	
