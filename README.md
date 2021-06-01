@@ -27,7 +27,7 @@
 
 ## Class Diagram
 
-<img width="546" alt="Screen Shot 2021-05-30 at 10 38 06 PM" src="https://user-images.githubusercontent.com/77302524/120144992-b5d83500-c197-11eb-8156-07e828dde2d2.png">
+<img width="606" alt="Screen Shot 2021-06-01 at 11 17 02 AM" src="https://user-images.githubusercontent.com/77302524/120371623-ed93c980-c2ca-11eb-8f64-dcc679b69f01.png">
  
 
  
