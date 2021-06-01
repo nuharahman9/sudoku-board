@@ -39,7 +39,7 @@ class SudokuBoard {
 		int cellValue;
 		static SudokuBoard* instance; 
 		string difficulty = ""; 
-		static SudokuBoard* instance;
+		
 		bool easy;
 		bool hard;
 		
