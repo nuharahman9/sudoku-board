@@ -1,21 +1,12 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Sudoku
- > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: Nuha Rahman, Hannah Cierlak, Vishal Menon
- 
- > You will be forming a group of **THREE** students and working on an interesting project. A list of proposed project ideas that have been successful in previous quarters is given in the project specifications link on iLearn. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal. Your project needs to implement two design patterns.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features.
- 
- > ## Expectations
- > * Incorporate **at least two** distinct design patterns. You need to include at least *one* design pattern that we will teach this session:
- >   * Composite, Strategy, Abstract Factory, Visitor, or Decorator
- > * All design patterns need to be linked together (it can't be two distinct projects)
- > * Your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
-> * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
+ > 
+ > Nuha Rahman: https://github.com/nuharahman9
+ > 
+ > Hannah Cierlak: https://github.com/shrimpnoodles
+ > 
+ > Vishal Menon: https://github.com/vmeno0020
 
 ## Project Description:
  > Your project description should summarize the project you are proposing. Be sure to include
@@ -30,41 +21,17 @@
  > 
  > At its most basic level, the program will start by outputting a menu, prompting the user to begin a game. It will take numbers as an input, and generate an  > > > updated soduku board as an output, in addition to the numbers entered. With each move, the menu should be continuously output, taking letters as input, allowing > the user to regenerate a board view, or to quit the game. If we have the time, we would also like to add features such as allowing the user to enter the level of > difficulty they would like for their soduku game (via letter options as input), an option allowing users to view whether their entry was correct, as well as timed games. 
  > * **What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:**
- >   * Why you picked this pattern and what feature you will implement with it
- >   * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
- >   * Why the chosen design pattern will lead to a good solution to that problem
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
  > Firstly we would like to use Singleton, as the program should be pretty simple and users can make sure that a class just has a single instance and a global access point is provided to that instance. In a game like Sudoku, where there is only one game board, it would make sense to use Singleton since it allows us to have only one instance of game board object that would be accessible to all clients. A problem that we anticipate to enocunter when implementing our project is that we may not have full control over global variables and more than one instance of the board object may be necessary. Singleton solves this issue by ensuring a class only has a single instance of an object and the game board object would be initialized only when it’s requested for the first time.
- > We would also like to use Strategy, as there are some algorithms such as where number will be displayed on the board, how the user will select the square they want to write an entry into, etc .  that should be hidden from the users. Since these algorithms will be closely related in terms of implementation, it would be convenient if they were encapsulated. Furthermore, Strategy allows for the clients of our project to choose the correct algorithm, so the need of multiple "if-else" statements would be eliminated. One issue that we expect to encounter when implementing our project using Strategy is that our project has to be aware of all the possible strategies in order to select the right one for the right siutation so we would expect testing to be quite complicated. However, in a game like sudoku, where you can have varying levels of difficulty, with strategy, unit testing would be relatively simple because each algorithm has its own class which can be tested by their own interface.
+ >
+ >  We would also like to use Strategy, as there are some algorithms such as where number will be displayed on the board, how the user will select the square they want to write an entry into, etc .  that should be hidden from the users. Since these algorithms will be closely related in terms of implementation, it would be convenient if they were encapsulated. Furthermore, Strategy allows for the clients of our project to choose the correct algorithm, so the need of multiple "if-else" statements would be eliminated. One issue that we expect to encounter when implementing our project using Strategy is that our project has to be aware of all the possible strategies in order to select the right one for the right siutation so we would expect testing to be quite complicated. However, in a game like sudoku, where you can have varying levels of difficulty, with strategy, unit testing would be relatively simple because each algorithm has its own class which can be tested by their own interface.
 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to 
- > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
- >   * Backlog, TODO, In progress, In testing, Done
- >   * You can change these or add more if you'd like, but we should be able to identify at least these.
- > * There is no requirement for automation in the project board but feel free to explore those options.
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller development tasks as issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
- > Include a class diagram(s) for each design pattern and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
- > 
+
 <img width="546" alt="Screen Shot 2021-05-30 at 10 38 06 PM" src="https://user-images.githubusercontent.com/77302524/120144992-b5d83500-c197-11eb-8156-07e828dde2d2.png">
  
- > ## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II
- > * In the meeting with your TA you will discuss: 
- >   - How effective your last sprint was (each member should talk about what they did)
- >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- >   - What tasks you are planning for this next sprint.
 
  > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  
@@ -74,5 +41,4 @@
  > Instructions on installing and running your application
  > To run the Sudoku game, type g++ -g -O0 main.cpp -o Sudoku and then use the ./Sudoku command.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- 
+ > Our project was tested using the google test submodule. We conducted unit tests for various functions implemented in our project.
