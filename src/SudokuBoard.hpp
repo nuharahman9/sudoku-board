@@ -2,7 +2,7 @@
 #define __SUDOKUBOARD_HPP__
 #include <iostream>
 //#include "GameStrategy.hpp"
-#include "EasyHard.hpp"
+#include "EasyHard.hpp" 
 #include <string>
 #include <ostream>
 
@@ -10,7 +10,7 @@ using namespace std;
 
 class SudokuBoard {
 	public:
-		 static SudokuBoard* getInstance();
+		 static SudokuBoard*  getInstance();
 		 
 		 ~SudokuBoard();
   	  	 int getScore();
@@ -18,10 +18,9 @@ class SudokuBoard {
 	
 		 void getEntry(int row, int column, int input);
    		 void makeEntry();
-
 		 void exitGame();
    		 void createGame();
-
+		 static void StaticDestructor(); 
 		 void getSolution();
 		
 	//functions for testing
@@ -30,14 +29,16 @@ class SudokuBoard {
 		 int getCol();
 		 int getRow();
 		 int getCellValue();
-		 int getEmptySlots();
+		
 	protected:
 		int gameBoard [9][9];
 		int userBoard [9][9];
 		int row = -1;
-		int col = -1;
+		int col = -1; 
 		int emptySlots = 0; 
 		int cellValue;
+		static SudokuBoard* instance; 
+		string difficulty = ""; 
 		static SudokuBoard* instance;
 		bool easy;
 		bool hard;
@@ -45,5 +46,6 @@ class SudokuBoard {
 	private:
 		SudokuBoard(); /* private constructor to prevent instancing */
 };
+
 #endif
 

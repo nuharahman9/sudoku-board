@@ -1,23 +1,26 @@
 #include "SudokuBoard.hpp"
 #include <iostream> 
 #include <string> 
+#include <cstring> 
+#include <cstdlib> 
 
 using namespace std; 
 
-SudokuBoard* SudokuBoard::instance = 0;
+SudokuBoard* SudokuBoard::instance = NULL;
 
 SudokuBoard* SudokuBoard::getInstance() {
     if (!instance) {
-        instance = new SudokuBoard;
+        instance = new SudokuBoard;  
     	return instance;
-	}
+    }
 
 }
 
-SudokuBoard::~SudokuBoard(){
-	delete instance;
-}
+SudokuBoard::~SudokuBoard(){ }
 
+void SudokuBoard::StaticDestructor() { 
+  delete instance; 
+}
 SudokuBoard::SudokuBoard(){}
 
 int SudokuBoard::getScore(){
@@ -116,12 +119,14 @@ void SudokuBoard::getEntry(int row, int col, int cellValue){
 	userBoard[row][col] = cellValue;
 }
 
+
 bool SudokuBoard::isEasy(){
 	return easy;
 }
 bool SudokuBoard::isHard(){
 	return hard;
 }
+
 
 void SudokuBoard::createGame(){
 	string difficulty = "";  
@@ -146,29 +151,35 @@ void SudokuBoard::createGame(){
 	} 	
      }
 
-    int** array = diff->generateGame(); 
-    for (unsigned i = 0; i < 9; i++) { 
+   //int** array = diff->generateGame();
+   int** array =  diff->generateGame();   
+   for (unsigned i = 0; i < 9; i++) { 
 	for (unsigned k = 0; k < 9; k++) { 
-            userBoard[i][k] = array[i][k];
+           userBoard[i][k] = array[i][k];
 	    if (array[i][k] == 0) { 
 		emptySlots++; 
 	   }       	     
 	}
     }
+
 //     emptySlots = 81 - emptySlots;  
    
+
    array = diff->generateSolution(); 
    for (unsigned i = 0; i < 9; i++) {
-        for (unsigned k = 0; k < 9; k++) {
+       for (unsigned k = 0; k < 9; k++) {
             gameBoard[i][k] = array[i][k];
         }
     }
-	delete diff;
+
+    delete diff;  
+	
  	  				
 }
 
 void SudokuBoard::exitGame(){
-	cout << "Goodbye!" << endl;
+	cout << "Goodbye!" << endl; 
+	atexit(StaticDestructor); 
 	exit(0);
 }
 
