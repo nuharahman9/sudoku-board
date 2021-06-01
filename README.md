@@ -9,11 +9,10 @@
  > Vishal Menon: https://github.com/vmeno0020
 
 ## Project Description:
- > Your project description should summarize the project you are proposing. Be sure to include
  > **Why is it important or interesting to you?**
  > 
  > This project is interesting to us because we all share an enthusiasm for the game Sudoku and wanted to gain a deeper understanding into how all the parts of the game would go together in code (C++). And because it will be a fun opportunity to translate our knowledge of programming into simple game development. This will be a great and challenging task for our goal of expanding our familiarity with game development.
- > **What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ > **What languages/tools/technologies do you plan to use?
  >   * [toolname](link) - Short description**
  >   
  >   We plan to use C++, Github, and Git. We will work on this project through the Terminal using UCR's Hammer server.
@@ -31,9 +30,6 @@
 <img width="546" alt="Screen Shot 2021-05-30 at 10 38 06 PM" src="https://user-images.githubusercontent.com/77302524/120144992-b5d83500-c197-11eb-8156-07e828dde2d2.png">
  
 
- > ## Final deliverable
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  
  ## Screenshots
  > Easy Game :
