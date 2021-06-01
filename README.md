@@ -1,8 +1,11 @@
 # Sudoku
  
  > Authors: Nuha Rahman, Hannah Cierlak, Vishal Menon
+ > 
  > Nuha Rahman: https://github.com/nuharahman9
+ > 
  > Hannah Cierlak: https://github.com/shrimpnoodles
+ > 
  > Vishal Menon: https://github.com/vmeno0020
 
 ## Project Description:
